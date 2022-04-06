@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Forms</h1>
+    <form>
+        <label for="username">Benutzername:</label>
+        <input type="text" id="username">
+        <label for="mail">E-Mail:</label>
+        <input required pattern="(?!test@test.com$)[\w.%+-]{3,}@[a-z]{3,}\.[a-z]{2,}(?:\.[a-z]{2,})?" type="email" id="mail">
+        <label for="password">Passwort:</label>
+        <input type="password" id="password">
+        <input type="button" value="Login">
+        <input type="color" id="color">
+        <input type="date">
+        <input type="month">
+        <input type="week">
+        <input type="time">
+        <input type="datetime-local">
+        <input type="number" min="0" max="100" step="20">
+        <!-- <input type="file" multiple> -->
+    </form>
+    <form action="/index.html" method="post" enctype="multipart/form-data">
+        <input type="file">
+        <input type="submit" value="Hochladen">
+    </form>
+    <form>
+        <select>
+            <optgroup label="DC">
+                <option value="Batman">Batman</option>
+                <option value="Superman">Superman</option>
+            </optgroup>
+            <optgroup label="Marvel">
+                <option value="Ironman">Ironman</option>
+                <option value="Thor">Thor</option>
+            </optgroup>
+        </select>
+    </form>
+</body>
+</html>

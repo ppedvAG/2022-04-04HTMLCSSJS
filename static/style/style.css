@@ -1,0 +1,179 @@
+/* Wie ist eine CSS-Regel aufgebaut */
+
+/* 
+
+selektor {
+    Ich bin der Block
+    Property: Value;
+}
+Nomenklatur:
+Alles zusammen : Regel/ Rule
+Vor den geschweiften Klammern: Selector
+Die geschweiften Klammern: Block
+Statements im Block: Declaration
+Vor dem Doppelpunkt: property
+Nach dem Doppelpunkt: Value;
+*/
+strong {
+    color: blue;
+}
+
+p {
+    color: red;
+}
+
+strong {
+    color: violet;
+}
+
+/* Element auswählen
+    Einfach namen des Elements gefolgt von geschweiften Klammern
+ */
+
+
+/* Bei gleicher Spezifität gilt, dass die letzt deklarierte Regel gilt  */
+
+/* Klasse auswählen */
+/* Um zu symbolisieren, dass es sich um eine Klasse handelt schreiebn wir einen Punkt vor dem Klassennamen */
+
+.chapter-heading {
+    color: #1976ac;
+}
+
+h3 {
+    color:pink;
+    font-size: 24px;
+}
+
+/* Id auswählen: */
+/* Um eine ID auszuwählen setzen wir ein # vor den Namen der ID */
+/* Noch spezifischer als eine Klasse */
+#mainHeader {
+    color: tomato;
+}
+
+#exampleTitle {
+    color:coral;
+}
+
+/* Descendant Selector */
+
+ol li {
+    font-size: 18px;
+    color: grey;
+}
+
+li {
+    color:aquamarine;
+}
+
+/* Hier kombinieren wir einen Element-Selector mit einem class-Selector */
+h4.chapter-heading {
+    color: black;
+}
+
+/* Universal-Selector */
+/*  Wählt alles aus */
+* {
+    color: yellow;
+}
+
+div * {
+    color: magenta;
+
+}
+
+div {
+    background-color: rgba(66, 52, 5, 0.116); 
+    /* Legt die Hitnergrund Farbe fest */
+}
+
+/* Texteigenschaften */
+
+p {
+    font-family: 'Rubik Wet Paint', cursive;
+    /*  Wenn möglich nimmt der Browser die erste zutreffende Schriftart */
+    font-size: 16px;
+    /* Textgröße */
+    font-style: italic;
+    /* Kursiv oder nicht */
+    font-weight: 900;
+    /* Fettgedruckt oder nicht */
+    /* text-decoration: underline; */
+    /* Bestimmt ob es einen Unterstrich, Überstrich o.ä. gibt */
+    text-align: center;
+    /* Center - Zentriert
+       Justify - Blocksatz
+        */
+}
+
+#square {
+    height: 100px;
+    width: 100px;
+    /* Gibt Höhe und Breite des Elements an */
+    background-color: cyan;
+    position: static;
+    /* 
+    static - Normale Anzeigeart, richtet sich nach dem Fluss der Seite => d.h. wo es laut HTML vorkommen sollte
+    relative - Verschiebe dich relativ zu deiner Ursprungsposition
+    fixed - Verschiebe dich relativ zum SIchtfeld des Users
+    sticky - Verhält sich static, bis es nicht mehr sichtbar wäre und wechselt dann zu fixed
+    absolute - Verschiebt sich relativ zum nächsten nicht static Vorgänger
+    */
+    /* Mittels top, bottom, left und right Können wir die Elemente von der Richtung "wegschieben" */
+
+}
+
+/* Display: */
+/* Grundlegende Values:
+    block
+    Inline
+    Inline-Block */
+
+    /* Block basiert dabei auf div 
+    Block nimmt sich die gesamte Zeile an Platz => Erzwingt also Zeilenumbruch
+    Hält sich an heigth und width
+    */
+
+    /* Inline basiert auf span
+    Nimmt sich nur so viel Platz wie nötig
+    Ignoriert width und heigth
+    */
+    /* Inline-block
+    Mischung aus Inline eund Block
+    Die Elemente können nebeneinander stehen, da nur so viel Platz genommen wird wie benötigt
+    Wir können fixe height und width definieren
+     */
+
+/* Box Model:
+    Besteht aus: (von innen nach außen)
+    Content: tatsächliche Inhalt
+    Padding: transparenter Zwischenraum zwischen Border und Content
+    Border: Grenze zwischen Padding und Margin
+    Margin: transparenter Rand um die Border
+ */
+
+#square {
+    padding: 15px;
+    margin: 15px;
+    border: 5px solid red;
+    /* Tatsächliche Größe des Elements:
+    Breite: width + margin (links/rechts) + border(links/rechts) + padding(links/rechts)
+    Höhe: heigth + margin (oben/unten) + border(oben/unten) + padding(oben/unten)
+    Um das zu umgehen können wir das Attribut box-sizing bneutzen
+    Dabei wird border + padding zum Content dazugerechnet
+    */
+}
+
+table, th, td {
+    /* Mit border fügen wir die Spalten und Zellen ein */
+    /* Mit border-collapse legen wir die doppelten Grezen zusammen */
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+/* 
+    Füge ein Tabellenstyling zu deiner Aboutme Seite hinzu
+    Ändere die Farbe der Überschrift
+    Links sollen wellig unterstrichen sein
+ */

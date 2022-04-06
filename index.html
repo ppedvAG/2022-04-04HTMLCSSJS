@@ -1,0 +1,267 @@
+<!-- Ich bin ein Kommentar-->
+<!-- Syntax von HTML -->
+<!-- <TagName> Start-Tag-->
+<!-- Inhalt -->
+<!-- </TagName> End-Tag -->
+<!-- Offizielle Richtline: Alle Tagnamen klein schreiben -->
+<!DOCTYPE html> <!-- Doctype Delcaration, sagt dem Browser wie er die Datei zu interpretiren hat-->
+<html> <!-- Im html-Tag steht der gesamte Inhalt der Seite-->
+    <head> <!-- Im head-Tag stehen die Meatinforamtionen der Seite-->
+        <meta name="description" content="Ich würde in der google Suche erscheinen">
+        <title>Erste Html-Seite</title> <!--Tabname-->
+        <meta name="robot" content="noindex,nofollow">
+        <!-- SPezifiziert wie die Suchmaschine sich verhalten soll
+        noindex - indizier die Seite nicht
+        nofollow - folge den Links der Seite nicht
+    -->
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=11"> 
+            Sagt dem Browser welche Internet Explorer Version benutzt werden soll,
+            wenn die Seite mit IE aufgerufen wird-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <!-- Viewport Meta Tag, Search Engine geht davon aus, dass wir eine responsive Website haben -->
+        <!-- Wirkt sich positiv auf die SEO aus -->
+        <link rel="stylesheet" href="static/style/style.css"> <!-- Verlinkung von css-Dateien -->
+        <link rel="stylesheet" href="">
+        <!-- link hat keinen end-Tag => Selbstschließend-->
+        <!-- <script src="/scripts/module03.js" defer></script> Verlinkung von Javascript dateien -->
+        <!-- Mit html:5 können wir das Grundgerüst von VS-Code generieren lassen -->
+        <script src="/scripts/module08.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Der Body enthält den tatsächlichen inhalt der Seite-->
+        <noscript>Ihr Browser unterstützt leider kein JavaScript</noscript>
+        <h1 id="mainHeader"> <!-- h*-Tags sind Überschriften-->
+            <!-- Sind durchnummeriert beginnend bei h1(Wichtigste Überschrift) bis h6(Unwichtigste) -->
+            <!-- Sollte nur einmal pro Seite benutzt werden-->
+            Beispiele
+        </h1>
+        <h2 id="secondChapter">Überschrift 2</h2>
+        <h3 class="chapter-heading" id="exampleTitle">Überschrift 3</h3>
+        <h4 class="chapter-heading">
+            <p class="chapter-heading">Beispiel</p>
+            Überschrift 4</h4>
+        <h5>Überschrift 5</h5>
+        <h6>Überschrift 6</h6>
+        <!-- Alle h-Tags werden fett dargestellt -->
+        <p id="firstParagraph">
+            <!-- Enthält Text-Inhalte -->
+            Lorem              ipsum dolor sit amet consectetur a
+            dipisicing elit. Vero, corporis quas dolorum laboriosam placeat, doloremque repellendus facilis laborum soluta consectetur ipsam velit omnis culpa possimus optio perspiciatis fugit quibusdam nihil!
+            Lorem ipsum dolo
+            r sit amet consectetur adipisicing elit. Nisi in natus, qui reiciendis commodi a, eum eligendi placeat iusto consequatur quam facilis inventore magnam, repellendus ipsa vel sequi at quaerat?
+            Lorem ipsum dolo
+            r sit amet consectetur adipisicing elit.
+            Rerum modi facere adipisci. Incidunt veniam nihil natus omnis eius, eligendi nisi id non earum, corrupti vitae labore dolores quas ratione quos?
+        <!-- Der p-Tag übernimmt keine Formatierungen -->
+
+        </p>
+        <p>
+            Anderer Text 
+            <strong>Hervorgehobener Text</strong> <!-- strong-Tag stellt Text fettgedruckt dar-->
+            <!-- Gut für Screenreader, da diese den Text besonders betonen -->
+            <em>Ich bin Kursiv</em>
+            <p>Zweiter Paragraph</p>
+            <!-- Gut für Screenreader, da diese den Text besonders betonen -->
+        </p>
+        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae cum voluptate natus maiores, sit excepturi reiciendis saepe delectus! Repudiandae cumque sequi alias aliquam minus ratione possimus quaerat dolorem architecto officia.</span>
+        <span>Zweite Span</span>
+        <!-- Span dient der Übermittlung von Textinhalten
+        Erzwingt ebenfalls keine neue Zeile -->
+        <h2>Nützliche Text-Tags</h2>
+        <p>Subskript: 2<sub>1</sub></p>
+        <!-- Sub stellt den enthaltenen Text als Fußnote für das vorrangehende Text-Element dar -->
+        <p>Superskript: 2<sup>3</sup></p>
+        <!-- Stellt den enthaltenen Inhalt als Superskript dar -->
+        <p>Farbliche <mark>Hervorhebung</mark></p>
+        <!-- Alles in Mark wird gelb hinterlegt -->
+        <p><small>Rechtliche Belehrung</small></p>
+        <!-- Inhalt wird klein dargestellt -->
+        <p><del>Text ist nicht mehr aktuell</del></p>
+        <!-- Wird durchgestrichen dargestellt -->
+        <p><ins>Ich bin der ersatz für das durchgestrichene</ins></p>
+        <p>Längere Zitate:
+            <blockquote>
+                Ich bin ein längeres Zitat
+                <!-- Wird eingerückt dargestellt -->
+            </blockquote>
+        </p>
+        <p>Kürzere Zitate:
+            <q>Ich bin kurz.</q>
+            <!-- Wird von ANfürhungszeicehn umgeben -->
+        </p>
+        <p>Abkürzungen: <abbr title="HyperText Markup Language">HTML</abbr></p>
+        <!-- abbr Stellt Abkürzungen dar, das ausgeschriebene wird im title-Attribut festgelegt -->
+        <address>
+            84503 Altötting, blabla
+        </address>
+        <!--  Semantischer Tag,damit Screenreader wissen, was die Adresse ist -->
+        <div> 
+            <!--  Steht für division -->
+            <!-- Ist eigentlich für die Logische Trennung von Inhalten gedacht -->
+            <!-- <article></article> Semantischere Version davon -->
+            <h2>Listen:</h2>
+            <p>Es gibt 3 Arten von Listne in HTML</p>
+            <h3>Ordered List:</h3>
+            <ol reversed type="i"> <!-- Definiert den Beginn einer geordneten Liste-->
+                <li>html lernen</li> <!-- List item, der aufgezählte Punkt-->
+                <li>html anwenden</li>
+                <li>???</li>
+                <ol>
+                    <li>Unterpunkt</li>
+                </ol>
+                <li>profit</li>
+            </ol>
+            <!-- Attribute für ol:
+                start="Zahl" legt den Startpunkt fest
+                reversed Kehrt die Reihenfolge um
+                type="1/A/a/I/i" Legt die Aufzählungsart fest
+                    1 - Nummerierte Aufzählung
+                    A - Buchstaben groß
+                    a - Buchstaben klein
+                    I - Römische Ziffern groß
+                    i - römische Ziffern klein
+            -->
+            <h3>Unordered List:</h3>
+            <ul> <!-- Definiert den Anfang einer ungeordneten Liste-->
+                <li> Punkt a</li>
+                <ul>
+                    <li>Unterpunkt a</li>
+                    <li>Unterpunkt b</li>
+                </ul>
+                <li>Punkt b</li>
+                <li>Punkt c</li>
+            </ul>
+            <h3>Description List:</h3>
+            <dl> <!-- Dient der BEschreibung eines Terms-->
+                <dt>PPEDV Ag</dt> <!-- Steht für description Term, also das zubeschreibende Objekt-->
+                <dd>EIn IT-Schulungsanbieter</dd> <!-- Decription Detail, die tatsächliche Beschreibung-->
+            </dl>
+        </div>
+        <h3>Anchor-Tag:</h3>
+        <p>Dient der Verlinkung von anderen Seiten oder der Navigaiton innerhlab unserer Seite:</p>
+        <a href="https://ppedv.de/" target="_blank">Link zur ppedv-Seite</a>
+        <!-- Benötigt das href-Attribut, das den Link auf die andere Seite enhtält -->
+        <!-- Mit dem Target-Attribut kann festgelegt werden, ob es sich in einem neuen Tab öffnet oder nicht -->
+        <a href="aboutme.html">Über mich</a>
+        <a href="#main">Zurück nach oben</a>
+        <!-- Mit hashtag verlinkt es auf eine ID innerhalb des Dokuments -->
+        <div>
+            <h3>Tabellen:</h3>
+            <!-- Beginn einer Tabelle: -->
+            <table>
+                <thead> <!-- Enthält die Kopfzeile unsere Tabelle-->
+                    <tr> <!-- Erstellt eine Tabellenzeile-->
+                        <th scope="col">Spalte1</th> <!--Überschrift für die Spalte-->
+                        <th scope="col">Spalte2</th>
+                        <th scope="col">Spalte3</th>
+                    </tr>
+                </thead>
+                <tbody> <!-- Enthält die tatsächlichen Daten der Tabelle-->
+                    <tr>
+                        <th scope="row">Daten Zeile1:</th>
+                        <td>25</td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Daten Zeile2:</th>
+                        <td>250</td>
+                        <td>5000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Daten Zeile3:</th>
+                        <td>450</td>
+                        <td>821</td>
+                    </tr>
+                </tbody>
+                <tfoot> <!-- Fußzeile der Tabelle-->
+                    <tr>
+                        <td colspan="3">Daten wurden übernommen von xyz.</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produkt</th>
+                        <th>Anzahl</th>
+                        <th>Preis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Laptop</th>
+                        <!-- scope row ist v.a. für Screenreader nützlich, damit diese wissen die Daten aus der Zeile beziehen sich auf den Inhalt des ths -->
+                        <td>4</td>
+                        <td>1200€</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h3>Bilder in HTML:</h3>
+            <p>Haben mehrere Möglichkeiten</p>
+            <h4>img-Tag</h4>
+            <img src="http://via.placeholder.com/250x250" alt="Ein Platzhalterbild">
+            <!-- Im src-Attribut geben wir den Pfad des Bilds an und mit alt geben wir eine kurze Beychreibung ab -->
+            <!-- Mit den Attributen height und width können wir die Breite oder Höhe anpassen -->
+            <!-- Sollte aber lieber mit CSS gemacht werden -->
+        </div>
+        <picture>
+            <source srcset="http://via.placeholder.com/650x650" media="(min-width:700px)">
+            <source srcset="http://via.placeholder.com/450x450" media="(min-width:500px)">
+            <source srcset="http://via.placeholder.com/150x150" media="(min-width:200px)">
+            <img src="http://via.placeholder.com/50x50" alt="Kleines Platzhalterbild">
+        </picture>
+        <!-- Es wird das erste passende BIld aus dem Picture Tag gewählt -->
+        <!-- Falls keine der Bedingungen erfüllt wird oder der picture-Tag nicht unterstützt wird, wird der img-Tag benutzt -->
+        <video width="400px" controls>
+            <source src="https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4" type="video/mp4">
+            <source src="Pfad zum video" type="video/webm">
+        </video>
+        <!-- Browser schaut nach welches das erste unterstützt Foramt ist und lädt das dann herunter -->
+        <!-- Attribute für den Video-Tag:
+            autoplay - SPielt das Video automatisch ab
+            controls - Stellt dem user die Steuerungsoberfläche zur Verfügung
+            muted - Muted das Video automatisch
+            loop - Spielt das Video in Schleife ab
+            poster - Thumbnail für das Video
+            heigth - Höhe des Players
+            width - Breite des Players
+        -->
+        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/esX7SFtEjHg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        <h3 class="chapter-heading">Inlineframe</h3>
+        <!-- Mit dem Inlineframe betten wir ein anderes Dokument in unsere Seite ein -->
+        <iframe src="https://ppedv.de" title="pepdv-Seite" width="100%" height="350px"></iframe>
+        <!-- Häufigsten Attribute in HTML: -->
+        <h3>Id:</h3>
+        <p>Ist ein einzigartiger Identifier für ein bestimmtes HTML-ELement</p>
+        <p>Kann zwar mehrfach vergeben werden, sollte es aber nicht</p>
+        <p>Ist Case sensitive</p>
+        <p>Die Benennung sollte erklären, warum die ID existiert</p>
+        <p>Klasse sollte ausdrücken wozu das Element da ist</p>
+        <p>BestPractice: snake-Case</p>
+        <p>Anwendung:</p>
+        <ul>
+            <li>Verlinken innerhalb der Seite</li>
+            <li>Styling in CSS</li>
+            <li>Navigation mittels Javascript</li>
+        </ul>
+        <h3>Class:</h3>
+        <p>Ist zur Identifizerung einer gemeinsamen Aufgabe gedacht</p>
+        <p>Hauptsächlich für das Styling mittels CSS oder für die Navigation mittels JS</p>
+        <!-- Übung 1:
+        
+            Erstelle die aboutme.html
+
+            Befülle sie mit einem Bild (ob img oder picture ist egal)
+            Füge eine ol oder ul hinzu mit Hobbies (müssen keine echten sein)
+            Verlinke auf eine externe Seite
+            Verlinke einmal auf die index.html
+            Füge eine tabelle mit x beliebigen daten hinzu
+        -->
+        <div id="square"></div>
+    </body>
+</html>
