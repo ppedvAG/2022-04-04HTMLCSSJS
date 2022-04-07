@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* Mixin: */
+/* Vorteile von Sass: */
+/* Variablen: */
+/*
+    Überall benutzbar
+*/
+/* 
+    Alles was auf oberster Ebene definiert wird ist eine globale Variable
+*/
+body {
+  /*
+    Nur innerhalb der geschweiften Klammern von body benutzbar und in dessen Children
+    */
+}
+
+div {
+  background-color: green;
+}
+
+div div {
+  margin-top: 25px;
+  margin-left: 50px;
+}
+
+div div div p {
+  color: black;
+  font-size: 18px;
+}
+
+div div p {
+  color: blue;
+  font-size: 10px;
+}
+
+ul li {
+  color: brown;
+}
+
+.testClass, #testHead {
+  margin-top: 25px;
+  margin-left: 50px;
+}
+
+#testHead {
+  font-size: 50px;
+}
+/*# sourceMappingURL=style.css.map */

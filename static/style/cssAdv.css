@@ -1,0 +1,248 @@
+/* Selektoren: */
+/* tagName => trifft jeden entsprechenden Tag */
+/*  p => werden alle p Elemente gestylt */
+/* .className => trifft alle ELemente mit der Klasse */
+/* #idName => trifft das ELement mit der entsprechenden ID */
+/* p.text => trifft alle p-Elemente mit der Klasse text */
+/* table,th,td => stylt alle table, th und td Elemente */
+/* Descendant 
+    div p => Trifft alle p-Elemente, die in einer div stehen
+*/
+/* Child
+    div>p
+    Trifft alle p-Elemente die direkt in einer div enthalten sind
+*/
+/* 
+    Direct Sibling Combinator
+    section + h2 {}
+*/
+
+/* 
+    Sibling-Combinator
+    section ~ h2 {}
+*/
+
+/* 
+    attribute-Selector
+    tag/klasse[attributeName="wert"] Jedes Element mit dem entsprechenden Attribut + Wert
+    tag/klasse:not([attributeName="wert"]) Alle Elemente ohne das Attribut + Wert
+    tag/klasse[attributeName^="wert"], Attribut muss mit "wert" beginnen
+    tag/klasse[attributeName$="wert"], Attribut muss mit "wert" enden
+    tag/klasse[attributeName*="wert"], Attribut muss "wert" beinhalten
+*/
+
+div p {
+    /* Greift bei jedem p-Tag der irgendwo in einer div verschachtelt ist */
+    color:blue;
+}
+
+
+div>p{ 
+    /* Greift nur wenn der p-Tag ein direkts Kind der div ist */
+    color:red;
+}
+
+section ~ h2 {
+    font-size: 40px;
+}
+
+section + h2 {
+    font-size: 80px;
+    color: blue;
+}
+
+a[href="#"] {
+    color:black;
+    text-decoration: none;
+}
+
+a:not([href="#"]) {
+    color:red;
+}
+
+/* PseudoElemente */
+
+/* 
+    ::after - Fügt etwas direkt vor einem Element ein
+    ::before - Fügt etwas direkt nach einem Element ein
+*/
+
+#pseudo::before {
+    content: "Hallo";
+    font-size: 12px;
+}
+
+#pseudo::after {
+    content: "Tschau";
+    font-size: 12px;
+}
+
+/* 
+    ::first-letter stylt das erste Zeichen einer Zeile
+    ::first-line    stylt die erste Zeile eines Absatzes
+*/
+
+section>p::first-letter {
+    font-size: 20px;
+}
+
+section>p::first-line {
+    color:black;
+}
+
+/* 
+    ::marker Stylt die Markierung von list-items
+*/
+
+ul li::marker {
+    color: rgb(132, 0, 255);
+}
+
+/* 
+    ::placeholder
+    Stylt den Text, der im placeholder eines input-Elements steht
+ */
+
+input::placeholder {
+    color:rgb(124, 120, 129);
+}
+
+/* 
+    ::selection stylt Markierung des Benutzers
+*/
+
+p::selection {
+    background-color: tomato;
+}
+
+/* Pseudo-Klassen */
+
+/*
+    :hover - stylt Elemente, die von der Maus berührt werden
+*/
+/* Wenn wir über tr hovern wird der Hitnergrund bläulich */
+tr:hover {
+    background-color: rgba(0, 0, 255, 0.446);
+}
+
+/* Stylt das root Element => html*/
+:root {
+    background-color: whitesmoke;
+}
+
+/* 
+    :first-child => Erfasst alle Elemente, die das erste Kindselement darstellen
+*/
+
+tbody>tr:first-child {
+    background-color: aquamarine;
+}
+
+/* 
+    :last-child Stylt das letzte Kindselement
+*/
+
+tr:last-child {
+    color:green;
+}
+
+/* 
+    :only-child Stylt das Element, falls es das einzige Child ist
+*/
+
+tr:only-child {
+    background-color: yellow;
+}
+
+/* 
+    :nth-child(n) Stylt das n-te Child-Element
+    even alle geraden
+    odd alle ungeraden
+    fixe Zahlen z.B. :nth-child(3) => trifft genau das dritte Child
+    term :nth-child(2n+1) => ungerade
+
+*/
+
+tbody tr:nth-child(even) {
+    background-color: aquamarine;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: violet;
+}
+
+/* 
+    :nth-last-child() - WIe oben, aber in umgekehrter Reihenfolge
+*/
+
+tbody tr:nth-last-child(even) {
+    background-color: aquamarine;
+}
+
+tbody tr:nth-last-child(odd) {
+    background-color: violet;
+}
+
+/* 
+    :first-of-type Trifft das erste entsprechende Kindselement
+    :last-of-type Trifft das letze entsprechende Kindselement
+*/
+
+tr:last-of-type {
+    font-size: 30px;
+}
+
+/* 
+    :nth-of-type() Trifft das nte Element des Typens
+    :nth-last-of-type() triffft das nte Element des Typens in umgekehrter Zählung
+*/
+
+
+/* 
+    :empty Treffen wir ELemente, die keine Kindselemente aufweisen 
+    und keinen Textinhalt haben
+*/
+
+div:empty {
+    height: 40px;
+    width: 40px;
+    background-color: aliceblue;
+}
+
+h2:not(#pseudo) {
+    color: red;
+}
+/* 
+    //units
+    //flexbox
+    schatten
+    variablen
+    animationen
+    sass
+    //media-queries
+*/
+
+/* 
+    Fixen Einheiten: 
+    cm - Centimeter
+    mm - Milimeter
+    in - inch (ca. 2.5 cm)
+    !px - Pixel!
+    pt - Points (1 = 1/72in)
+    pc - Picas (1pc = 12pt)
+*/
+
+/* 
+    Relative Einheiten:
+    Sind immer in Realtion zu einer anderen Größeneinheit
+
+    em - Relativ zur Schriftgröße des Elements (p 12px, 2em => 24px) 
+    ex -(seltene) Relativ zur Höhe vom x der derzeitigen Schriftart/größe
+    ch - (selten) Relativ zur Breite der 0 in der derzeitigen Schriftart/Größe
+    !rem - (häufig) Relativ zur Schriftgröße des Root Elements!
+    vw - 1% der Breite des Viewports
+    vh - 1% der Höhe des Viewports
+    vmin - 1% der kleineren Seite des Viewports
+    vmax - 1% der größeren Seite des Viewports
+    % - Relativ zum Elternelement
+*/

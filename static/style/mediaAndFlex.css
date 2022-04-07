@@ -1,0 +1,169 @@
+/* 
+    Relative Einheiten:
+    Sind immer in Realtion zu einer anderen Größeneinheit
+
+    em - Relativ zur Schriftgröße des Elements (p 12px, 2em => 24px) 
+    ex -(seltene) Relativ zur Höhe vom x der derzeitigen Schriftart/größe
+    ch - (selten) Relativ zur Breite der 0 in der derzeitigen Schriftart/Größe
+    !rem - (häufig) Relativ zur Schriftgröße des Root Elements!
+    vw - 1% der Breite des Viewports
+    vh - 1% der Höhe des Viewports
+    vmin - 1% der kleineren Seite des Viewports
+    vmax - 1% der größeren Seite des Viewports
+    % - Relativ zum Elternelement
+*/
+
+/* 
+    MediaQueries
+    Syntax:
+
+    @media (typen) and (bedingung)
+    Mögliche Typen:
+    all - Alle Media-Arten
+    print - Drucker
+    screen - Bildschrim(Smartphone bis zum Fernseher)
+*/
+
+/* Regel gilt nur für Drucker */
+@media print {
+    * {
+        font-size: 8px;
+    }
+
+    img {
+        display: none;
+    }
+}
+
+/*  Reihenfolge ist wichtig: */
+/*  Als erstes die kleineneren Bildschirme, damit diese nicht die größeren überschreiben */
+:root {
+    font-size: 8px;
+}
+
+@media screen and (min-width:300px) {
+    :root {
+        font-size:10px;
+    }
+}
+@media screen and (min-width:500px) {
+    :root {
+        font-size: 12px;
+    }
+}
+@media screen and (min-width:800px) {
+    :root {
+        font-size: 14px;
+    }
+}
+@media screen and (min-width:1000px) {
+    :root {
+        font-size: 16px;
+    }
+}
+/* @media (orientation: landscape) {
+    * {
+        background-color: yellow;
+    }
+} */
+
+/* Prüft ob der User ein Pointer-Device hat (Maus z.B.) */
+/* @media (hover: hover) {
+    * {
+        background-color: blue;
+    }
+} */
+
+
+h1 {
+    font-size: 5rem;
+}
+
+header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+section {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+picture, img {
+    margin: 1.5rem auto;
+    display: block;
+}
+
+/*  margin: oben rechts unten links
+    margin: oben/unten rechts/links
+*/
+
+#content {
+    /* Wandelt unser Element in eine FlexBox um */
+    display: flex;
+    flex-direction: row; 
+    /*  row versucht alles in eienr Zeile darzustellen
+        column stellt die Elemente untereinander dar
+        reverse-row, eine Zeile umgekehrte Reihenfolge
+        reverse-column, untereinander, aber unmgekehrte Reihenfolge
+    */
+    flex-wrap: wrap; 
+    /* wrap bedeutet, dass Umbrüche erlaubt sind */
+    /* nowrap bedeuet,dass alles in einer "Zeile" dargestellt werden muss */
+    /* Shorthand */
+    flex-flow: row wrap;
+
+}
+article {
+    flex: 1 5rem;
+    /* Das flex-item nimmt sich mindestens die in flex spezifizierte Größe an Platz*/
+    /* 
+    Alternativ:
+    flex: 1
+    Ist eine Größe ohne einheit und richtet sich nach der Anzahl der Elemente innerhalb einer
+    FlexBox
+    Bsp:
+    item1{flex:2} // Hat doppelt so viel Platz wie item2
+    item2{flex:1}
+    */
+}
+article+article {
+    flex: 2 5rem;
+}
+div {
+    display: flex;
+    justify-content: space-evenly;
+    /* 
+    space-evenly Verteilt die Inhalte gleichmäßig, damit gleich viel Platz zwischen ihnen ist
+    space-around Vertielt die Inhalte so, damit auf jeder Seite gleich viel Platz frei ist
+    space-between Verteilt die Inhalte so, dass zwischen ihnen gleich viel frei bleibt, aber sie am Rand beginnen und aufhören
+    flex-end Drückt die items Richtung Ende
+    flex-start Drückt die items Richtung Anfang
+    center Stellt die Items mittig dar
+    */
+    height: 20rem;
+    flex-wrap: wrap;
+    align-items: center;
+    /* 
+    align-items 
+    Ordnet die items vertikal an:
+    center - Mittig
+    space-around -damit oben und unten gleich viel Platz ist
+    flex-start oben
+    flex-end unten
+    space-between - gleich viel Platz zwischen den Elementen
+    strecht - passt die items der höhe des Elternelementes an, falls sie keine vorgegebene Höhe haben
+
+    */
+}
+button {
+    height: 5rem;
+    order:1;
+    /*  Order gibt an in welcher Reihenfolge die Items  dargestellt werden
+        Bei gleicher Zahl richten sie sich nach ihrem Vorkommen im HTML
+     */
+}
+
+
+
+

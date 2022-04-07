@@ -1,0 +1,9 @@
+/* Mixin: */
+@mixin margin {
+    margin-top: 25px;
+    margin-left: 50px;
+}
+
+@mixin test{
+    color:brown;
+}

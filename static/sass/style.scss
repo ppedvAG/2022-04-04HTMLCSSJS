@@ -1,0 +1,56 @@
+@import "mixins";
+
+/* Vorteile von Sass: */
+
+/* Variablen: */
+
+$mainColor: green;
+$fontSize: 18px;
+/*
+    Überall benutzbar
+*/
+
+/* 
+    Alles was auf oberster Ebene definiert wird ist eine globale Variable
+*/
+
+
+
+body {
+    $test: 2rem;
+    /*
+    Nur innerhalb der geschweiften Klammern von body benutzbar und in dessen Children
+    */
+
+}
+div {
+    background-color: $mainColor;
+    div{
+        @include margin;
+        div{
+            p{
+                color: black;
+                font-size: $fontSize;
+            }
+        }
+        p {
+            color:blue;
+            font-size: 10px;
+        }
+    }
+}
+ul {
+    li{
+        @include test;
+    }
+}
+
+
+.testClass {
+    @include margin;
+}
+
+#testHead {
+    @extend .testClass;
+    font-size:  50px;
+}

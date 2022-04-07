@@ -1,0 +1,111 @@
+/* Variablen */
+/* Gültigkeit:
+    -globale, :root
+    -lokale , alle Variablen in einfachen Regeln
+*/
+/* 
+    Warum Variablen?
+    Häufig benutzte Werte einfacher benutzen
+    Übersichtlicher
+*/
+/* Syntax:
+    --namen: wert;
+*/
+:root {
+    --mainColor: yellow;
+    --secondaryColor: rgb(25, 152, 103);
+    --tertiaryColor: rgb(255, 0, 0);
+}
+@media screen and (min-width:500px) {
+    :root {
+        --mainColor: black;
+    }
+}
+/* 
+    Einsetzten von Variablen:
+*/
+h1 {
+    color: var(--mainColor);
+}
+
+#main {
+    background-color: var(--secondaryColor, pink);
+}
+
+p {
+    color: var(--tertiaryColor);
+}
+
+/* Shadow: */
+/* 
+    text-shadow: x-Versatz y-Versatz blur farbe
+    box-shadow: x-Versatz y-Versatz blur farbe
+*/
+
+
+h1 {
+    text-shadow: 2px 2px 5px black;
+}
+
+#main {
+    box-shadow: 9px 9px 0 black;
+}
+
+/* Animations: */
+
+/* Keyframes definieren:
+    Syntax:
+    @keyframes animationName {
+    from {ZustandVorher}
+    to {ZustandNachher}
+    }
+    @keyframes animationName {
+    10% {ZustandVorher}
+    20% {ZustandNachher}
+    .
+    .
+    .
+    100% {Enduzustand}
+    }
+*/
+
+@keyframes rainbow {
+    /* from {background-color: blue;}
+    to {background-color: yellow;} */
+    0% {background-color: blue;}
+    10% {background-color: rgb(28, 28, 99);}
+    20% {background-color: rgb(0, 0, 0);}
+    30% {background-color: rgb(6, 122, 112);}
+    40% {background-color: rgb(7, 223, 32);}
+    50% {background-color: rgb(223, 7, 223);}
+    60% {background-color: rgb(7, 223, 32);}
+    70% {background-color: rgb(77, 69, 154);}
+    80% {background-color: rgb(223, 7, 7);}
+    90% {background-color: rgb(223, 7, 129);}
+    100% {background-color: rgb(229, 255, 0);}
+
+
+}
+
+@keyframes move {
+    0% {left:0; top:0}
+    25% {left:50px; top:10px}
+    50% {left:100px; top:20px}
+    75% {left:150px; top:30px}
+    100% {left:200px; top:40px}
+    
+}
+
+#square {
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    position: relative;
+    animation-name: move;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    /* animation-timing-function: cubic-bezier(0.87, 0, 1, 0.02); */
+    animation-delay: 0.5s;
+    animation-direction: alternate;
+}
+
