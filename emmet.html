@@ -1,0 +1,133 @@
+<!-- Emmet -->
+<!-- Zen Coding -->
+<!-- Sozusagen Kurzform um HTML Code schnell schreiben zu können -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+</head>
+<body>
+    <h1>ToDo-List</h1>
+    <!-- Emmet -->
+    <ul>
+        <li>Aufgabe1</li>
+        <li>Aufgabe2</li>
+        <li>Aufgabe3</li>
+        <li>Aufgabe4</li>
+        <li>Aufgabe5</li>
+    </ul>
+    <ul>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+        <li>item6</li>
+        <li>item7</li>
+    </ul>
+    <ul>
+        <li>text9</li>
+        <li>text8</li>
+        <li>text7</li>
+        <li>text6</li>
+        <li>text5</li>
+    </ul>
+    <!-- Emmet Abbreviations können mit Symbolen kombiniert werden -->
+    <!-- 
+        > -Descendant, d.h. ul>li li würde vom ul Tag umgeben sein
+        {} - Textinhalt p{bsp} wird zu <p>bsp</p>
+        $ - Nummerierung (li{$})*5 => 5 lis <li>1</li>...<li>5</li>
+        + - Sibling, d.h. dass die Tags danach benachbart sind div+div => <div></div><div></div>
+        () - Grouping - ul>(li)*5 generiert eine ul mit 5 li
+        ^ - Climb-up, steigt eine Stufe hoch
+        * - Multiply, erstellt ein Element mehrfach
+        # - Weist eine Id zu
+        . - Weist eine Klasse zu
+        [attributeName="value"] - Weist dem Element das Attribut + Wert zu
+    -->
+    <!-- div>(h2+p*2)*3 -->
+    <div>
+        <h2></h2>
+        <p></p>
+        <p></p>
+        <h2></h2>
+        <p></p>
+        <p></p>
+        <h2></h2>
+        <p></p>
+        <p></p>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!-- div>p>span+strong^h2  -->
+    <div>
+        <p><span></span><strong></strong></p>
+        <h2></h2>
+    </div>
+    <!-- div.content>h2#chapter-heading -->
+    <div class="content">
+        <h2 id="chapter-heading"></h2>
+    </div>
+    <!-- p[title="text"] -->
+    <p title="text"></p>
+    <!-- btn[value="a"] -->
+    <button value="a"></button>
+    <p>Ich werde im p-Tag stehen</p>
+    <div class="bsp"></div>
+    <ol>
+        <li class="todo"></li>
+    </ol>
+    <!-- Implizite Tags -->
+    <!-- Klasse/ID ohne Tagnamen => erstellt div -->
+    <!-- table>.klasse  => erstellt tr -->
+    <!-- ul/ol>.klasse => erstellt li -->
+    <!-- table>.klasse>.klasse -->
+    <table>
+        <tr class="row1">
+            <td class="element"></td>
+        </tr>
+    </table>
+    <table>
+        <tr class="row">
+            <td class="col"></td>
+        </tr>
+    </table>
+    <!--  Emmet generiert auch immer die benötigten Attribute -->
+    <a href=""></a>
+    <img src="" alt="">
+    <label for=""></label>
+    <input type="color" name="" id="">
+    <!-- input:type -->
+    <!-- Generiert ein input Element mit dem entsprechenden type-Attribut -->
+    <!-- input:email -->
+    <input type="email" name="" id="">
+    <!-- Semantic HTML -->
+    <!-- <section> -->
+    <!-- Section ist für die inhaltliche Gliederung unserer Seite gedacht  -->
+    <!-- Sollte statt div benutzt werden -->
+    <section>
+        <!-- <article> -->
+        <!-- Ist ein Textinhalt, der für sich alleine stehen kann -->
+        <!-- Z.B. ein Blog-Eintrag -->
+        <!-- Article kann auch weiter verschachtelt werden -->
+        <!-- Z.b. könnte jeder Kommentar zu dem Blog-Eintrag ein weiterer Article sein -->
+        <article>
+
+        </article>
+    </section>
+    <!-- <nav> -->
+    <!-- Sollte die navigation Bar beinhalten -->
+    <nav>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+        </ul>
+    </nav>
+    <!-- <aside> -->
+    <!-- Ist für nebeninformationen gedacht -->
+    <!-- <footer> -->
+    <!-- Enthält die Fußzeile -->
+    <!-- Kontakt, Impressum, Datenschutz etc -->
+</body>
+</html>

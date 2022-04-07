@@ -5,17 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="/scripts/module09+10.js" defer></script>
 </head>
 <body>
+    <!-- 
+    https://bit.ly/3NPCUJv
+    -->
     <h1>Forms</h1>
-    <form>
+    <form id="form1">
         <label for="username">Benutzername:</label>
         <input type="text" id="username">
         <label for="mail">E-Mail:</label>
-        <input required pattern="(?!test@test.com$)[\w.%+-]{3,}@[a-z]{3,}\.[a-z]{2,}(?:\.[a-z]{2,})?" type="email" id="mail">
+        <input pattern="(?!test@test.com$)[\w.%+-]{3,}@[a-z]{3,}\.[a-z]{2,}(?:\.[a-z]{2,})?" type="email" id="mail">
         <label for="password">Passwort:</label>
         <input type="password" id="password">
-        <input type="button" value="Login">
+        <input type="submit" value="Login">
         <input type="color" id="color">
         <input type="date">
         <input type="month">
@@ -29,8 +33,8 @@
         <input type="file">
         <input type="submit" value="Hochladen">
     </form>
-    <form>
-        <select>
+    <form id="submitForm3">
+        <select id="dropdownMenu">
             <optgroup label="DC">
                 <option value="Batman">Batman</option>
                 <option value="Superman">Superman</option>
@@ -40,6 +44,9 @@
                 <option value="Thor">Thor</option>
             </optgroup>
         </select>
+        <input type="submit" value="Absenden">
     </form>
+    <div id="preview"></div>
+    <button id="delete">Cookies löschen</button>
 </body>
 </html>
